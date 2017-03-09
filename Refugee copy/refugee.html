@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Refugee News</h1>
+		</div>
+		<div id="news">
+			<div class="list-group">
+				<a class="list-group-item" href="#" target="_blank">
+					<h4 class="list-grop-item-heading">News Headline 1</h4>
+					<div class="clearfix">
+						<div class="col-md-1">
+							<img src="Images/doge.jpeg" alt="doge" height="75px" width="75px"/>
+						</div>
+						<div class="col-md-11">
+							<p class="list-group-item-text">More insane stuff to talk about and you should totally be reading this article because it is just so majorly important.</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript">
+		var jsonp_url = "refugeenews_json.py";
+		console.log("hello?")
+		// $.getJSON(jsonp_url + "?callback=?", {}, function(data) {
+		// 		console.log("data", data);
+		// 		console.log("hey");
+		// 			$("#news").text(data);
+				
+		// 	});
+		$.ajax({
+			type: "get",
+			url: jsonp_url,
+			success: function(data, status) {
+				//var response = JSON.parse(data);
+				console.log(data);
+			}
+		})
+	</script>
+</body>
+</html>
